@@ -44,11 +44,11 @@ export function setDeviceAuthorization(id, authorized) {
 }
 
 export function getDevices(filter = null) {
-    return db.get('devices').filter(filter).value()
+    return db.get('devices').filter(filter).value().reverse()
 }
 
 export function getData(filter = null) {
-    return db.get('data').filter(filter).value()
+    return db.get('data').filter(filter).value().reverse()
 }
 
 export function findDevice(query) {
