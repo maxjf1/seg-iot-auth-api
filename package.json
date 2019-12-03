@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/maxjf1/iot-project-server#readme",
   "devDependencies": {
-    "babel-cli": "*",
-    "babel-preset-env": "*",
     "nodemon": "*"
   },
   "dependencies": {
+    "babel-cli": "*",
+    "babel-preset-env": "*",
     "body-parser": "^1.19.0",
     "cors": "*",
     "express": "*",
