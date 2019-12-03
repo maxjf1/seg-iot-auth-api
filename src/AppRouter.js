@@ -17,13 +17,12 @@ AppRouter.get('/devices/:id', (req, res) =>
 )
 
 AppRouter.put('/devices/:id/authorize', (req, res) => {
-    setDeviceAuthorization(Number(req.params.id), true)
-    res.sendStatus(200)
+    res.send(setDeviceAuthorization(Number(req.params.id), true))
 })
 
 AppRouter.delete('/devices/:id/authorize', (req, res) => {
-    setDeviceAuthorization(Number(req.params.id), false)
-    res.sendStatus(200)
+    
+    res.send(setDeviceAuthorization(Number(req.params.id), false))
 })
 
 AppRouter.get('/data', (req, res) => 
