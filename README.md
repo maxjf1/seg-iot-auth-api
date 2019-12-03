@@ -1,6 +1,6 @@
 # UFJF Segurança - Autenticação em dispositivos IOT (API)
 
-API para autenticação de dispositivos IOT
+API para autenticação de dispositivos IOT https://iot-auth-api.herokuapp.com/
 
 ## Rotas
 
