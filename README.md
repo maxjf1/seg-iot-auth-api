@@ -8,6 +8,6 @@ API para autenticação de dispositivos IOT
   - `/auth`: Obter novo Token de autenticação (usar apenas quando não possuir)
   - `/data/:DADOS`: Salva dados no banco. Requer token no header (JSON WebToken)
 - `/app`: Rotas para cliente web
-  - `/devices`, `/devices/new`, `/devices/:id`: obtém dispositiovos IOT
+  - `/devices`, `/devices/new`, `/devices/:id`: obtém/deleta dispositiovos IOT
   - `/devices/:id/authorize (PUT, DELETE)`: Adiciona/remove autorização
   - `/data`: Obtém dados cadastrados por dispositivos IOT  

@@ -55,8 +55,16 @@ export function findDevice(query) {
     return db.get('devices').find(query).value()
 }
 
+export function deleteDevice(createdAt) {
+    return db.get('devices').remove({ createdAt }).write()
+}
+
 export function findData(query) {
     return db.get('data').find(query).value()
+}
+
+export function deleteData(id) {
+    return db.get('data').remove({ id }).write()
 }
 
 export function addData({ id }, value) {
