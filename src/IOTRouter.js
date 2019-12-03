@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { jwtSign, jwtVerify, setIp, withAuth } from './utils';
-import { addDevice, addData } from './config/database';
+import { addDevice, addData, withValidUser } from './config/database';
 import { SECRET, EXPIRATION } from './config/consts';
 
 const IOTRouter = new Router
@@ -20,7 +20,7 @@ IOTRouter.get('/auth/:token', (req, res) => {
 })
 
 
-IOTRouter.post('/data/:data', withAuth, (req, res) => {
+IOTRouter.post('/data/:data', withAuth, withValidUser, (req, res) => {
     addData(req.auth, req.params.data)
     res.sendStatus(200)
 })

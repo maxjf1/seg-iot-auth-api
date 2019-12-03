@@ -11,6 +11,13 @@ db.defaults({ nextId: 0, devices: [], data: [] })
     .write()
 
 
+export function withValidUser(req, res, next) {
+    if (!req.auth || !findDevice({ id: req.auth.id }))
+        return res.status(401).send('Invalid Auth')
+    next()
+}
+
+
 export function addDevice({ ip = false }) {
     const id = db.get('nextId').value()
     const device = {
@@ -55,11 +62,11 @@ export function findData(query) {
 export function addData({ id }, value) {
     const device = db.get('devices').find({ id }).value()
 
-    
+
     if (!device || !device.authorized) return
-    
+
     console.log(device)
-    
+
     const entry = {
         deviceId: device.id,
         createdAt: (new Date()).getTime(),
