@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { setDeviceAuthorization, getDevices, getData, findDevice, deleteDevice } from './config/database';
+import { setDeviceAuthorization, getDevices, getData, findDevice, deleteDevice, deleteData } from './config/database';
 
 const AppRouter = new Router
 
@@ -34,7 +34,7 @@ AppRouter.get('/data', (req, res) =>
 )
 
 AppRouter.delete('/data/:createdAt', (req, res) =>
-    res.send(deleteDevice(Number(req.params.createdAt)) || 404)
+    res.send(deleteData(Number(req.params.createdAt)) || 404)
 )
 
 export default AppRouter
